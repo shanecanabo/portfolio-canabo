@@ -1,4 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Typing animation for portfolio text
+    const typingText = document.querySelector('.typing-text');
+    const cursorElement = document.querySelector('.cursor-blink');
+    const text = 'PORTFOLIO';
+    let index = 0;
+    let isTyping = false;
+    
+    function typeWriter() {
+        if (index < text.length) {
+            typingText.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 120); // Smoother: 120ms per character
+        } else {
+            // Show cursor and wait before starting over
+            cursorElement.style.display = 'inline-block';
+            setTimeout(eraseText, 1500); // Wait 1.5 seconds before erasing
+        }
+    }
+    
+    function eraseText() {
+        if (typingText.textContent.length > 0) {
+            typingText.textContent = typingText.textContent.slice(0, -1);
+            setTimeout(eraseText, 80); // Faster erase: 80ms per character
+        } else {
+            // Reset and start typing again
+            index = 0;
+            setTimeout(typeWriter, 500); // Wait 0.5 seconds before typing again
+        }
+    }
+    
+    // Start the animation cycle
+    setTimeout(typeWriter, 300);
+    
     // Handle hover effects for selection handles
     const handles = document.querySelectorAll('.handle');
     const selectionOutline = document.querySelector('.selection-outline');
