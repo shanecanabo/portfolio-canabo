@@ -89,40 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     });
     
-    // Message bubble pulse effect
-    const messageBubble = document.querySelector('.message-bubble');
-    
-    setInterval(() => {
-        messageBubble.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-            messageBubble.style.transform = 'scale(1)';
-        }, 300);
-    }, 3000);
-    
-    // Click indicator interaction
-    const clickIndicator = document.querySelector('.click-indicator');
-    
-    clickIndicator.addEventListener('click', function() {
-        // Create a ripple effect
-        const ripple = document.createElement('div');
-        ripple.style.position = 'absolute';
-        ripple.style.width = '20px';
-        ripple.style.height = '20px';
-        ripple.style.background = 'rgba(59, 130, 246, 0.3)';
-        ripple.style.borderRadius = '50%';
-        ripple.style.top = '50%';
-        ripple.style.left = '50%';
-        ripple.style.transform = 'translate(-50%, -50%)';
-        ripple.style.animation = 'ripple 0.6s ease-out';
-        ripple.style.pointerEvents = 'none';
-        
-        this.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-    
     // Add ripple animation to CSS
     const style = document.createElement('style');
     style.textContent = `
@@ -148,27 +114,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         .comment-bubble {
-            transition: transform 0.2s ease;
             cursor: pointer;
         }
         
         .hello-world-tag {
-            transition: all 0.2s ease;
+            transition: background 0.2s ease;
         }
         
         .message-bubble {
-            transition: transform 0.3s ease;
+            transition: background 0.3s ease;
         }
         
-        .click-indicator {
-            cursor: pointer;
-            position: relative;
-            transition: color 0.2s ease;
-        }
-        
-        .click-indicator:hover {
-            color: #3b82f6;
-        }
     `;
     document.head.appendChild(style);
     

@@ -25,7 +25,7 @@ body {
 .frame-label {
     position: absolute;
     top: 30%;
-    left: 20%;
+    left: 18%;
     background: #F4F4F2;
     border-radius: 4px;
     padding: 4px 8px;
@@ -230,113 +230,150 @@ body {
 /* HelloWorld tag */
 .hello-world-tag {
     position: absolute;
-    bottom: 280px;
-    left: 180px;
+    top: calc(50% + 180px);
+    left: 300px;
+    transform: translateX(-50%);
     background: #211F20;
     color: #F4F4F2;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 12px;
+    width: 200px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 4px;
+    font-size: 14px;
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 12px;
     z-index: 15;
     cursor: pointer;
 }
 
-.hello-world-tag::after {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 8px 8px 8px;
-    border-color: transparent transparent #211F20 transparent;
-}
-
 .tag-icon {
-    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
-/* Year badge */
-.year-badge {
+.tag-cursor {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
     position: absolute;
-    bottom: 200px;
-    right: 100px;
-    background: #211F20;
-    color: #F4F4F2;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    z-index: 15;
+    top: -24px;
+    right: -20px;
 }
+
 
 /* Message bubble */
 .message-bubble {
     position: absolute;
-    bottom: 240px;
-    right: 60px;
+    top: calc(50% + 200px);
+    right: 300px;
+    transform: translateX(50%);
     background: #3b82f6;
     color: #F4F4F2;
-    padding: 10px 16px;
-    border-radius: 20px;
-    font-size: 13px;
+    width: 240px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 4px;
+    font-size: 14px;
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     z-index: 15;
+    cursor: pointer;
 }
 
 .message-icon {
-    font-size: 16px;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
-/* Click indicator */
-.click-indicator {
+.message-cursor {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
     position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #666;
-    font-size: 14px;
-    z-index: 10;
+    top: -24px;
+    left: -20px;
 }
 
-.click-cursor {
-    color: #211F20;
-    font-size: 18px;
-    margin-top: 4px;
-    animation: blink 1s infinite;
-}
 
 @keyframes blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
 }
 
-/* Cursor */
-.cursor {
-    position: absolute;
-    bottom: 360px;
-    right: 240px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 12px 0 12px 20px;
-    border-color: transparent transparent transparent #3b82f6;
-    z-index: 20;
-    animation: float 2s ease-in-out infinite;
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+/* Floating animations for elements */
+.figma-comment {
+    animation: float 3s ease-in-out infinite;
+}
+
+.hello-world-tag {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.message-bubble {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* Click indicator */
+.click-indicator {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.click-indicator:hover {
+    transform: translateX(-50%) translateY(-5px);;
+}
+
+.click-indicator span {
+    color: #211F20;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+/* Landing content */
+.landing-content {
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+    padding: 80px 20px;
+}
+
+.landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.landing-container h2 {
+    font-size: 48px;
+    color: #211F20;
+    margin-bottom: 30px;
+    font-weight: 700;
 }
 
 /* Responsive adjustments */
