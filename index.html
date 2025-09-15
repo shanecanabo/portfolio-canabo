@@ -1,78 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio - Shane Canabo</title>
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Shane Canabo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<!-- Figma-style workspace background -->
-	<div class="figma-workspace">
-		<div class="figma-grid"></div>
-		
-		<main class="portfolio-container">
-			<!-- Figma selection frame around main content -->
-			<div class="figma-selection-frame">
-				<!-- Corner handles -->
-				<div class="figma-handle corner-handle top-left"></div>
-				<div class="figma-handle corner-handle top-right"></div>
-				<div class="figma-handle corner-handle bottom-left"></div>
-				<div class="figma-handle corner-handle bottom-right"></div>
-				
-				<!-- Header with social notification -->
-				<div class="social-notification figma-element">
-					<div class="notification-avatar">
-						<img src="C:\Users\Shane Canabo\Documents\CCS  206 - APPDEV\portfolio-canabo\Assets\profile.jpg" alt="Shane Canabo">
-					</div>
-					<div class="notification-content">
-						<span class="username">@shanecanabo</span>
-						<span class="time">2 min ago</span>
-						<div class="message">wow portfolio :0</div>
-					</div>
-				</div>
-
-				<!-- Main portfolio title with Figma selection -->
-				<div class="portfolio-title figma-selected">
-					<h1>PORTFOLIO</h1>
-					<div class="title-accent"></div>
-					<!-- Figma selection indicators -->
-					<div class="figma-selection-outline"></div>
-				</div>
-
-				<!-- Action buttons with Figma styling -->
-				<div class="action-buttons">
-					<button class="btn btn-primary figma-element">
-						<span class="btn-icon">😭</span>
-						woa ang galing
-						<!-- Button selection handles -->
-						<div class="figma-button-handles">
-							<div class="figma-handle btn-handle left"></div>
-							<div class="figma-handle btn-handle right"></div>
-						</div>
-					</button>
-					<button class="btn btn-secondary figma-element">
-						@HelloWorld
-						<span class="btn-icon">😎</span>
-						<!-- Button selection handles -->
-						<div class="figma-button-handles">
-							<div class="figma-handle btn-handle left"></div>
-							<div class="figma-handle btn-handle right"></div>
-						</div>
-					</button>
-				</div>
-
-				<!-- Scroll indicator -->
-				<div class="scroll-indicator figma-element">
-					<span>click here</span>
-					<div class="scroll-arrow">↓</div>
-				</div>
-			</div>
-		</main>
-	</div>
-	
-	<script src="script.js"></script>
+    <!-- Figma-like canvas background -->
+    <div class="figma-canvas">
+        
+        <!-- Desktop frame label -->
+        <div class="frame-label">Desktop - 1</div>
+        
+        <!-- Main portfolio container with selection -->
+        <div class="portfolio-container">
+            <!-- Selection outline -->
+            <div class="selection-outline">
+                <!-- Selection handles -->
+                <div class="handle top-left"></div>
+                <div class="handle top-right"></div>
+                <div class="handle bottom-left"></div>
+                <div class="handle bottom-right"></div>
+                
+                <!-- Portfolio text -->
+                <h1 class="portfolio-text">PORTFOLIO</h1>
+                
+                <!-- Blue accent dot -->
+                <div class="blue-dot"></div>
+            </div>
+        </div>
+        
+        <!-- Figma-style comment -->
+        <div class="figma-comment">
+            <div class="comment-avatar">
+                <img src="Assets/profile.jpg" alt="Shane">
+            </div>
+            <div class="comment-bubble">
+                <div class="comment-header">
+                    <span class="comment-author">@shanecanabo</span>
+                    <span class="comment-time">2 min ago</span>
+                </div>
+                <div class="comment-text">wow portfolio :D</div>
+            </div>
+        </div>
+        
+        <!-- HelloWorld tag -->
+        <div class="hello-world-tag">
+            <span class="tag-icon">👋</span>
+            <span class="tag-text">@HelloWorld</span>
+        </div>
+        
+        <!-- Year badge -->
+        <div class="year-badge">2025</div>
+        
+        <!-- Blue message bubble -->
+        <div class="message-bubble">
+            <span>woa ang galing !</span>
+            <div class="message-icon">😊</div>
+        </div>
+        
+        <!-- Click here indicator -->
+        <div class="click-indicator">
+            <span>click here</span>
+            <div class="click-cursor">|</div>
+        </div>
+        
+        <!-- Cursor -->
+        <div class="cursor"></div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
-</html>
 </html>
